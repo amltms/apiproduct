@@ -1,0 +1,21 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+a{
+  color:black;
+}
+
+.products{
+  display:flex;
+  justify-content: center;
+}
+
+.product{
+  margin: 0px 4%;
+  background:grey;
+  padding:1% 5%;
+}
