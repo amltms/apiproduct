@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import Axios from 'axios';
 import {Link} from 'react-router-dom';
+import {useHistory} from "react-router-dom";
 
 import {ErrorMsg} from "../ErrorMsg";
 
 export const ViewProduct = (props) =>{
+    const history = useHistory();
     const [product, setProduct] = useState({
         name: '',
         description: '',
@@ -32,6 +34,7 @@ export const ViewProduct = (props) =>{
     const deleteProduct = async (id) =>{
         try {
             await Axios.delete(`/products/${id}`)
+            history.push("/products");
         } catch (error) {
             error.response.statusText && setError(error.response.statusText);
             console.log(error.response.statusText);
